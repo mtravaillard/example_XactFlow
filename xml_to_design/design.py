@@ -6,7 +6,7 @@ here = Path(__file__).parent
 library = Library.scan(here.parent / "bus_definitions", here)
 
 # Defining the design
-design = Design("example.org:design:soc:1.0", library)
+design = Design("example.org:design:soc_a:1.0", library)
 
 # Adding IPs
 cpu = design.add_ip("cpu", "example.org:ip:cpu:1.0")
