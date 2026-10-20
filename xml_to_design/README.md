@@ -8,6 +8,14 @@ They are not made with XactFlow-sv.
 
 ## Run
 
+From this folder:
+
 ```bash
 xactflow archidesc design.py --then design --output out/
+```
+
+Or, to also check the design with an elaboration, and write `out/soc_a.xml` if there is no error:
+
+```bash
+python build_and_check.py
 ```
