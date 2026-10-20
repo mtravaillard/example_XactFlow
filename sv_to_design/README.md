@@ -23,3 +23,17 @@ Or do everything in one command, it also checks the design with an elaboration, 
 ```bash
 python build_and_check.py
 ```
+
+## Bypassing .xml component files
+
+`design.py` reads the .xml component files written in `out/`. So each `.sv` file is first read into
+a Python component object, then written as an .xml IP-XACT component file, then read again to get
+the same Python object back.
+`design_from_sv.py` describes the same design, but reads the `.sv` and `.json` files directly:
+the components stay in memory and no component file is written. It gives the same `out/soc_b.xml`.
+
+From this folder:
+
+```bash
+xactflow archidesc design_from_sv.py --then design --output out/
+```
