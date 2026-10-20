@@ -1,0 +1,23 @@
+{
+    "vendor": "example.org",
+    "library": "ip",
+    "version": "1.0",
+    "busInterfaces": {
+        "apb": {
+            "bus": "example.org:bus:apb4:1.0",
+            "mode": "target",
+            "ports": {
+                "PADDR": "paddr_i",
+                "PPROT": "pprot_i",
+                "PSEL": "psel_i",
+                "PENABLE": "penable_i",
+                "PWRITE": "pwrite_i",
+                "PWDATA": "pwdata_i",
+                "PSTRB": "pstrb_i",
+                "PREADY": "pready_o",
+                "PRDATA": "prdata_o",
+                "PSLVERR": "pslverr_o"
+            }
+        }
+    }
+}

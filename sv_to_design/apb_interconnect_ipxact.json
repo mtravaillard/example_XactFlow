@@ -1,0 +1,87 @@
+{
+    "vendor": "example.org",
+    "library": "ip",
+    "version": "1.0",
+    "busInterfaces": {
+        "s0": {
+            "bus": "example.org:bus:apb4:1.0",
+            "mode": "target",
+            "ports": {
+                "PADDR": "s0_paddr_i",
+                "PPROT": "s0_pprot_i",
+                "PSEL": "s0_psel_i",
+                "PENABLE": "s0_penable_i",
+                "PWRITE": "s0_pwrite_i",
+                "PWDATA": "s0_pwdata_i",
+                "PSTRB": "s0_pstrb_i",
+                "PREADY": "s0_pready_o",
+                "PRDATA": "s0_prdata_o",
+                "PSLVERR": "s0_pslverr_o"
+            }
+        },
+        "s1": {
+            "bus": "example.org:bus:apb4:1.0",
+            "mode": "target",
+            "ports": {
+                "PADDR": "s1_paddr_i",
+                "PPROT": "s1_pprot_i",
+                "PSEL": "s1_psel_i",
+                "PENABLE": "s1_penable_i",
+                "PWRITE": "s1_pwrite_i",
+                "PWDATA": "s1_pwdata_i",
+                "PSTRB": "s1_pstrb_i",
+                "PREADY": "s1_pready_o",
+                "PRDATA": "s1_prdata_o",
+                "PSLVERR": "s1_pslverr_o"
+            }
+        },
+        "m0": {
+            "bus": "example.org:bus:apb4:1.0",
+            "mode": "initiator",
+            "ports": {
+                "PADDR": "m0_paddr_o",
+                "PPROT": "m0_pprot_o",
+                "PSEL": "m0_psel_o",
+                "PENABLE": "m0_penable_o",
+                "PWRITE": "m0_pwrite_o",
+                "PWDATA": "m0_pwdata_o",
+                "PSTRB": "m0_pstrb_o",
+                "PREADY": "m0_pready_i",
+                "PRDATA": "m0_prdata_i",
+                "PSLVERR": "m0_pslverr_i"
+            }
+        },
+        "m1": {
+            "bus": "example.org:bus:apb4:1.0",
+            "mode": "initiator",
+            "ports": {
+                "PADDR": "m1_paddr_o",
+                "PPROT": "m1_pprot_o",
+                "PSEL": "m1_psel_o",
+                "PENABLE": "m1_penable_o",
+                "PWRITE": "m1_pwrite_o",
+                "PWDATA": "m1_pwdata_o",
+                "PSTRB": "m1_pstrb_o",
+                "PREADY": "m1_pready_i",
+                "PRDATA": "m1_prdata_i",
+                "PSLVERR": "m1_pslverr_i"
+            }
+        },
+        "m2": {
+            "bus": "example.org:bus:apb4:1.0",
+            "mode": "initiator",
+            "ports": {
+                "PADDR": "m2_paddr_o",
+                "PPROT": "m2_pprot_o",
+                "PSEL": "m2_psel_o",
+                "PENABLE": "m2_penable_o",
+                "PWRITE": "m2_pwrite_o",
+                "PWDATA": "m2_pwdata_o",
+                "PSTRB": "m2_pstrb_o",
+                "PREADY": "m2_pready_i",
+                "PRDATA": "m2_prdata_i",
+                "PSLVERR": "m2_pslverr_i"
+            }
+        }
+    }
+}

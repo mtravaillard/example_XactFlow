@@ -1,0 +1,39 @@
+{
+    "vendor": "example.org",
+    "library": "ip",
+    "version": "1.0",
+    "busInterfaces": {
+        "regs": {
+            "bus": "example.org:bus:apb4:1.0",
+            "mode": "target",
+            "ports": {
+                "PADDR": "regs_paddr_i",
+                "PPROT": "regs_pprot_i",
+                "PSEL": "regs_psel_i",
+                "PENABLE": "regs_penable_i",
+                "PWRITE": "regs_pwrite_i",
+                "PWDATA": "regs_pwdata_i",
+                "PSTRB": "regs_pstrb_i",
+                "PREADY": "regs_pready_o",
+                "PRDATA": "regs_prdata_o",
+                "PSLVERR": "regs_pslverr_o"
+            }
+        },
+        "sba": {
+            "bus": "example.org:bus:apb4:1.0",
+            "mode": "initiator",
+            "ports": {
+                "PADDR": "sba_paddr_o",
+                "PPROT": "sba_pprot_o",
+                "PSEL": "sba_psel_o",
+                "PENABLE": "sba_penable_o",
+                "PWRITE": "sba_pwrite_o",
+                "PWDATA": "sba_pwdata_o",
+                "PSTRB": "sba_pstrb_o",
+                "PREADY": "sba_pready_i",
+                "PRDATA": "sba_prdata_i",
+                "PSLVERR": "sba_pslverr_i"
+            }
+        }
+    }
+}
