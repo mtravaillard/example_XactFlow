@@ -2,7 +2,7 @@ from pathlib import Path
 from xactflow import Library
 from xactflow_archidesc import Design
 
-here = Path(__file__).parent
+here = Path(__file__).resolve().parent
 library = Library.scan(here.parent / "bus_definitions", here / "out")
 
 # Defining the design
