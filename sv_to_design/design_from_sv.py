@@ -1,5 +1,5 @@
 from pathlib import Path
-from xactflow import Library, LibraryEntry
+from xactflow import Library
 from xactflow_archidesc import Design
 from xactflow_sv import SVImporter
 
@@ -10,7 +10,8 @@ library = Library.scan(here.parent / "bus_definitions")
 for sv_file in sorted(here.glob("*.sv")):
     metadata = here / f"{sv_file.stem}_ipxact.json"
     component = SVImporter().import_(sv_file, metadata=metadata)
-    library.entries[component.vlnv] = LibraryEntry(path=sv_file, document=component)
+    if not library.add(component):
+        raise ValueError(f"{component.vlnv} from {sv_file.name} is already in the library")
 
 # Defining the design
 design = Design("example.org:design:soc_b:1.0", library)

@@ -14,7 +14,7 @@ From this folder:
 xactflow archidesc design.py --then design --output out/
 ```
 
-Or, to also check the design with an elaboration, and write `out/soc_a.xml` if there is no error:
+Or, to also check the design by linking it to the library, and write `out/soc_a.xml` if there is no error:
 
 ```bash
 python build_and_check.py

@@ -1,5 +1,6 @@
-xactflow>=0.1.2
-xactflow-sv>=0.1.0
+ipxact-compiler>=0.1.2
+xactflow>=0.2.0
+xactflow-sv>=0.1.1
 xactflow-archidesc>=0.1.0
 xactflow-component>=0.1.2
 xactflow-design>=0.1.1

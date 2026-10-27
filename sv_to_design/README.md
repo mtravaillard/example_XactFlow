@@ -17,7 +17,7 @@ Then create the design file:
 xactflow archidesc design.py --then design --output out/
 ```
 
-Or do everything in one command, it also checks the design with an elaboration, and writes
+Or do everything in one command, it also checks the design by linking it to the library, and writes
 `out/soc_b.xml` only if there is no error:
 
 ```bash
