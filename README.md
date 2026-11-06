@@ -3,7 +3,7 @@
 Examples that show how to use the XactFlow tools to create IP-XACT files.
 
 - [xml_to_design](xml_to_design/): creates an .xml IP-XACT design file from a library of .xml IP-XACT
-  components and a archidesc Python script.
+  components and an archidesc Python script.
 - [sv_to_design](sv_to_design/): creates the .xml IP-XACT components from SystemVerilog files, then
   creates the .xml IP-XACT design file that connects them with an archidesc Python script.
 

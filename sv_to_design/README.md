@@ -18,7 +18,7 @@ xactflow archidesc design.py --then design --output out/
 ```
 
 Or do everything in one command, it also checks the design by linking it to the library, and writes
-`out/soc_b.xml` only if there is no error:
+`out/example.org_design_soc_b_1.0.xml` only if there is no error:
 
 ```bash
 python build_and_check.py
@@ -30,10 +30,14 @@ python build_and_check.py
 a Python component object, then written as an .xml IP-XACT component file, then read again to get
 the same Python object back.
 `design_from_sv.py` describes the same design, but reads the `.sv` and `.json` files directly:
-the components stay in memory and no component file is written. It gives the same `out/soc_b.xml`.
+the components stay in memory and no component file is written. It gives the same
+`example.org_design_soc_b_1.0.xml`.
 
 From this folder:
 
 ```bash
-xactflow archidesc design_from_sv.py --then design --output out/
+xactflow archidesc design_from_sv.py --then design --output out_in_memory/
 ```
+
+The design is written in `out_in_memory/`, not in `out/`: both designs have the same name, so the
+second one would replace the first.

@@ -221,3 +221,4 @@ __marimo__/
 
 # XactFlow
 out/
+out_in_memory/

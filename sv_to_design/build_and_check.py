@@ -8,6 +8,10 @@ from xactflow_sv import SVImporter
 
 here = Path(__file__).resolve().parent
 
+# Removing the files of a previous run
+for old_file in (here / "out").glob("*.xml"):
+    old_file.unlink()
+
 # Generating one component file for each .sv file
 for sv_file in sorted(here.glob("*.sv")):
     metadata = here / f"{sv_file.stem}_ipxact.json"
