@@ -1,4 +1,5 @@
 from pathlib import Path
+import ipxact
 from xactflow import Library
 from xactflow_archidesc import Design
 from xactflow_sv import SVImporter
@@ -9,7 +10,9 @@ library = Library.scan(here.parent / "bus_definitions")
 # Adding one component for each .sv file to the library, without writing component files
 for sv_file in sorted(here.glob("*.sv")):
     metadata = here / f"{sv_file.stem}_ipxact.json"
-    component = SVImporter().import_(sv_file, metadata=metadata)
+    ip_library = Library()
+    SVImporter().import_(sv_file, ip_library, metadata=metadata)
+    [component] = ip_library.targets(ipxact.Component)
     if not library.add(component):
         raise ValueError(f"{component.vlnv} from {sv_file.name} is already in the library")
 

@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+import ipxact
 from xactflow import Library, Severity, link
 from xactflow_archidesc import ArchiDescImporter
 from xactflow_component import ComponentExporter
@@ -15,14 +16,16 @@ for old_file in (here / "out").glob("*.xml"):
 # Generating one component file for each .sv file
 for sv_file in sorted(here.glob("*.sv")):
     metadata = here / f"{sv_file.stem}_ipxact.json"
-    component = SVImporter().import_(sv_file, metadata=metadata)
-    ComponentExporter().export(component, here / "out")
+    ip_library = Library()
+    SVImporter().import_(sv_file, ip_library, metadata=metadata)
+    ComponentExporter().export(ip_library, here / "out")
     print(f"component written for {sv_file.name}")
 
 library = Library.scan(here.parent / "bus_definitions", here / "out")
 
-# Building the design from design.py
-design = ArchiDescImporter().import_(here / "design.py")
+# Building the design, and the component containing it, from design.py
+ArchiDescImporter().import_(here / "design.py", library)
+[design] = library.targets(ipxact.Design)
 
 # Linking the design against the library
 linked = link(design, library)
@@ -37,6 +40,7 @@ if any(d.severity == Severity.ERROR for d in diagnostics):
 print(f"linked with no errors ({len(linked.instances)} instances, "
       f"{len(linked.interconnections)} interconnections)")
 
-# Writing the design file
-DesignExporter().export(design, here / "out")
-print(f"design written to {here / 'out'}")
+# Writing the design file and the component file
+DesignExporter().export(library, here / "out")
+ComponentExporter().export(library, here / "out")
+print(f"design and component written to {here / 'out'}")
