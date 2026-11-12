@@ -224,7 +224,31 @@
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
+        <ipxact:name>gpio_i</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors>
+            <ipxact:vector>
+              <ipxact:left>DATA_W-1</ipxact:left>
+              <ipxact:right>0</ipxact:right>
+            </ipxact:vector>
+          </ipxact:vectors>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
         <ipxact:name>gpio_o</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors>
+            <ipxact:vector>
+              <ipxact:left>DATA_W-1</ipxact:left>
+              <ipxact:right>0</ipxact:right>
+            </ipxact:vector>
+          </ipxact:vectors>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>gpio_oe_o</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
           <ipxact:vectors>
@@ -240,7 +264,7 @@
   <ipxact:parameters>
     <ipxact:parameter parameterId="DATA_W" resolve="user">
       <ipxact:name>DATA_W</ipxact:name>
-      <ipxact:description>Number of GPIO outputs</ipxact:description>
+      <ipxact:description>Number of GPIO pins</ipxact:description>
       <ipxact:value>8</ipxact:value>
     </ipxact:parameter>
   </ipxact:parameters>

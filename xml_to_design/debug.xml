@@ -4,7 +4,7 @@
   <ipxact:library>ip</ipxact:library>
   <ipxact:name>debug</ipxact:name>
   <ipxact:version>1.0</ipxact:version>
-  <ipxact:description>Debug module with one APB target for its registers and one APB initiator for system bus access</ipxact:description>
+  <ipxact:description>Debug module with one APB target for its registers and one APB initiator for system bus access, and a JTAG port to reach it from outside the chip</ipxact:description>
   <ipxact:busInterfaces>
     <ipxact:busInterface>
       <ipxact:name>regs</ipxact:name>
@@ -398,6 +398,36 @@
         <ipxact:name>sba_pslverr_i</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>tck_i</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>tms_i</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>trst_ni</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>tdi_i</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>tdo_o</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>

@@ -12,10 +12,16 @@ From this folder:
 
 ```bash
 xactflow archidesc design.py --then design --output out/
+xactflow archidesc design.py --then component --output out/
 ```
 
-Or, to also check the design by linking it to the library, and write
-`out/example.org_design_soc_a_1.0.xml` if there is no error:
+`Design("example.org:design:soc_a:1.0", ...)` names the SoC: the first command writes the design,
+`out/example.org_design_soc_a.design_1.0.xml`, the second the component that contains it (the SoC
+seen as one IP), `out/example.org_design_soc_a.component_1.0.xml`. `--then` takes one exporter, so
+it is two commands.
+
+Or, to also check the design by linking it to the library, and write both files if there is no
+error:
 
 ```bash
 python build_and_check.py

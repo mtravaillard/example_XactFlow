@@ -38,3 +38,23 @@ design.connect_bus(bus.bus("m2"), debug.bus("regs"), base_addr=0x4000_2000, size
 # AdHoc Connections
 design.connect(uart.irq_o, cpu.irq_i)
 design.connect(debug.debug_req_o, cpu.debug_req_i)
+
+# Top-level I/Os
+clk = design.add_port("in", "clk_i")
+rst = design.add_port("in", "rst_ni")
+for ip in (cpu, bus, uart, gpio, debug):
+    design.connect(clk, ip.clk_i)
+    design.connect(rst, ip.rst_ni)
+
+design.add_port("out", "uart_tx_o", connect=uart.tx_o)
+design.add_port("in", "uart_rx_i", connect=uart.rx_i)
+
+design.add_port("in", "gpio_i", width=16, connect=gpio.gpio_i)
+design.add_port("out", "gpio_o", width=16, connect=gpio.gpio_o)
+design.add_port("out", "gpio_oe_o", width=16, connect=gpio.gpio_oe_o)
+
+design.add_port("in", "jtag_tck_i", connect=debug.tck_i)
+design.add_port("in", "jtag_tms_i", connect=debug.tms_i)
+design.add_port("in", "jtag_trst_ni", connect=debug.trst_ni)
+design.add_port("in", "jtag_tdi_i", connect=debug.tdi_i)
+design.add_port("out", "jtag_tdo_o", connect=debug.tdo_o)

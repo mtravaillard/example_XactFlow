@@ -1,5 +1,6 @@
 // Debug module: one APB target for its registers (regs), one APB initiator for
-// system bus access (sba). Header only, no logic.
+// system bus access (sba), and a JTAG port to reach it from outside the chip.
+// Header only, no logic.
 module debug (
     input  logic        clk_i,
     input  logic        rst_ni,
@@ -27,6 +28,13 @@ module debug (
     input  logic        sba_pready_i,
     input  logic [31:0] sba_prdata_i,
     input  logic        sba_pslverr_i,
+
+    // JTAG
+    input  logic        tck_i,
+    input  logic        tms_i,
+    input  logic        trst_ni,
+    input  logic        tdi_i,
+    output logic        tdo_o,
 
     output logic        debug_req_o
 );

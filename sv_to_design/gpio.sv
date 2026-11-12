@@ -17,6 +17,9 @@ module gpio #(
     output logic [31:0]       prdata_o,
     output logic              pslverr_o,
 
-    output logic [DATA_W-1:0] gpio_o
+    // GPIO pins
+    input  logic [DATA_W-1:0] gpio_i,
+    output logic [DATA_W-1:0] gpio_o,
+    output logic [DATA_W-1:0] gpio_oe_o
 );
 endmodule
